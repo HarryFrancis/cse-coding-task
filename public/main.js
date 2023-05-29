@@ -105,7 +105,7 @@ class CheckoutReceipt extends HTMLElement {
             // Create markup and replace values
             let formatted_markup = this.item_markup
                 .replace('{{ item_title }}', discount.title)
-                .replace('{{ item_value }}', `£${savings_amount.toFixed(2)}`)
+                .replace('{{ item_value }}', `- £${savings_amount.toFixed(2)}`)
 
             // Append item to list
             this.el_savings_list.insertAdjacentHTML('beforeEnd', formatted_markup)
@@ -146,7 +146,7 @@ class CheckoutReceipt extends HTMLElement {
             // Create markup and replace values
             let formatted_markup = this.item_markup
                 .replace('{{ item_title }}', discount.title)
-                .replace('{{ item_value }}', `£${discount_savings.toFixed(2)}`)
+                .replace('{{ item_value }}', `- £${discount_savings.toFixed(2)}`)
 
             // Append item to list
             this.el_savings_list.insertAdjacentHTML('beforeEnd', formatted_markup)
@@ -165,7 +165,7 @@ class CheckoutReceipt extends HTMLElement {
         this.el_subtotal.innerHTML = `£${this.subtotal.toFixed(2)}`
 
         // Update total savings markup
-        this.el_savings_total.innerHTML = `£${this.savings_total.toFixed(2)}`
+        this.el_savings_total.innerHTML = `- £${this.savings_total.toFixed(2)}`
 
         // Update total markup
         this.el_receipt_total.innerHTML = `£${(this.subtotal - this.savings_total).toFixed(2)}`
