@@ -104,7 +104,7 @@ We would also like the repository to contain a README explaining what you have d
 
 We would prefer if you use some of the technologies we are most familiar with, so ideally this would be written in one of Python, Clojure, Java or Javascript. We understand that we’re asking you to do work in your free time and that this might be hard to accommodate, so please do not feel you have to spend ages on it.
 
-## First thoughts to approach
+## First thoughts (approach)
 
 I will be using javascript, as this is the scripting language I am most comfortable using. I will be writing in modern syntax making use of ES6 function, as this is well supported now (gone are the days of supporting IE!).
 
@@ -122,12 +122,26 @@ This data will be passed through a class that will build the receipt and apply t
 
 I will create a very brief layout in html to display the receipt, using tailwind to throw some quick styles together.
 
-## Usage
+## Usage (development)
 
-- Start watching for changes in tailwind
+- Start watching for changes in tailwind (CSS only). This is the only compiling that needs to happen
     - `npx tailwindcss -i ./public/input.css -o ./public/output.css --watch`
 
-## 
+## Viewing
 
-- Uses JavaScripts 'customElements'
-- Uses class objects
+- Open up the index.html file in your browser it should load, i've included the compiled files on the repository, so there is no need to do a build.
+- You can edit 'this.basket' at the top of public/main.js to see how the reciept changes with different items (you will need to page reload)
+
+## Features
+
+- Used IDs as unique identifiers, incase of a situation where two products have one name
+- The discounts are in groups where I saw logic heavily overlapped, allowing for new discounts of similar nature to be added easily
+- Both discount types work with multiple products
+- The x items for x pounds works with products of various values
+- The cheapest items are discounted in the buy x get x free discount
+- Rounded values at stage one to ensure consistancy in values
+
+## Limitations/trade-offs
+
+- Due to JavaScript being weakly typed, I had to keep ensuring the prices where being calculated as numbers (floats), not strings. A few times it outputted £1.001.00 instead of £2.00, as it was adding the values as strings.
+- With more time I would have considered grouping products onto one line, eg. 'beans x 3'.
