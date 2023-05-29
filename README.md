@@ -48,7 +48,7 @@ I will create a very brief layout in html to display the receipt, using tailwind
 - The cheapest items are discounted in the buy x get x free discount
 - Rounded values at stage one to ensure consistancy in values
 
-## Limitations/trade-offs
+## Limitations & Trade-offs
 
 - Due to JavaScript being weakly typed, I had to keep ensuring the prices where being calculated as numbers (floats), not strings. A few times it outputted £1.001.00 instead of £2.00, as it was adding the values as strings.
 - With more time I would have considered grouping products onto one line, eg. 'beans x 3'.
