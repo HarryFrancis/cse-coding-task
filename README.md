@@ -129,7 +129,7 @@ I will create a very brief layout in html to display the receipt, using tailwind
 
 ## Viewing
 
-- Open up the index.html file in your browser it should load, i've included the compiled files on the repository, so there is no need to do a build.
+- Open up the public/index.html file in your browser it should load, i've included the compiled files on the repository, so there is no need to do a build.
 - You can edit 'this.basket' at the top of public/main.js to see how the reciept changes with different items (you will need to page reload)
 
 ## Features
